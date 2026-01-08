@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
     display: flex;
     justify-content: center;
     padding-top: 50px;
@@ -9,41 +9,55 @@ body {
 
 .container {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    /* Rộng hơn chút để hiện thời gian */
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #2c3e50;
+    margin-bottom: 25px;
 }
 
 form {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-input {
+input[type="text"] {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
 }
 
 button {
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
-button:hover {
-    background-color: #218838;
+form button {
+    background-color: #3498db;
+    color: white;
+}
+
+form button:hover {
+    background-color: #2980b9;
 }
 
 ul {
@@ -52,31 +66,76 @@ ul {
 }
 
 li {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    /* Thanh màu đánh dấu */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    /* Xếp dọc để chứa dòng thời gian bên dưới */
+    gap: 5px;
+    transition: all 0.2s;
+}
+
+li.completed {
+    border-left-color: #27ae60;
+    background-color: #e8f5e9;
+}
+
+.task-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Class này sẽ được thêm vào khi task hoàn thành */
-.completed-text {
-    text-decoration: line-through;
-    color: gray;
-}
-
-.task-content {
+.task-title {
+    font-size: 18px;
     cursor: pointer;
     flex: 1;
+    margin-right: 10px;
+}
+
+.completed .task-title {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.task-meta {
+    font-size: 12px;
+    color: #7f8c8d;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.btn-group button {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.edit-btn {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background-color: #f39c12;
 }
 
 .delete-btn {
-    background-color: #dc3545;
-    margin-left: 10px;
-    font-size: 12px;
+    background-color: #e74c3c;
+    color: #fff;
 }
 
 .delete-btn:hover {
-    background-color: #c82333;
+    background-color: #c0392b;
+}
+
+/* Style cho input khi đang sửa */
+.edit-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
 }
