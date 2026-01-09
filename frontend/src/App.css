@@ -1,0 +1,285 @@
+.app-container {
+  width: 100%;
+  max-width: 550px;
+  /* Giới hạn chiều rộng cho vừa mắt */
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+  margin: 0 20px;
+  /* Cách lề 2 bên trên điện thoại */
+}
+
+/* Tiêu đề */
+h1 {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+/* --- FORM NHẬP LIỆU --- */
+.input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #dfe6e9;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+  background-color: #f9f9f9;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+  /* Hiệu ứng tỏa sáng khi nhập */
+}
+
+.btn-add {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.btn-add:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-add:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- BỘ LỌC (FILTER) --- */
+.filter-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  background: #f1f2f6;
+  padding: 5px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-filter {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #636e72;
+  transition: all 0.3s;
+}
+
+.btn-filter:hover {
+  color: var(--primary);
+}
+
+.btn-filter.active {
+  background-color: white;
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+/* --- DANH SÁCH TASK --- */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-item {
+  background: white;
+  border: 1px solid #f1f2f6;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.task-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transform: translateX(5px);
+}
+
+/* Thanh màu bên trái */
+.task-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--primary);
+}
+
+.task-item.completed::before {
+  background-color: #00b894;
+  /* Màu xanh lá khi xong */
+}
+
+.task-item.completed {
+  opacity: 0.7;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view-mode,
+.edit-mode {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #2d3436;
+  flex: 1;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #b2bec3;
+}
+
+/* --- NÚT BẤM NHỎ (Edit/Delete) --- */
+.btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+
+.btn-edit {
+  background: #fdcb6e;
+  color: #fff;
+}
+
+.btn-delete {
+  background: #ff7675;
+  color: #fff;
+}
+
+.btn-save {
+  background: #00b894;
+  color: #fff;
+}
+
+.btn-cancel {
+  background: #636e72;
+  color: #fff;
+}
+
+/* Input khi đang sửa */
+.edit-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #fdcb6e;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* --- NGÀY THÁNG --- */
+.task-meta {
+  border-top: 1px dashed #eee;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #b2bec3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-clock {
+  color: var(--primary);
+}
+
+.updated-text {
+  color: #e17055;
+  font-weight: 500;
+}
+
+/* --- THÔNG BÁO LỖI --- */
+.error-msg {
+  background-color: #ffeaa7;
+  color: #d63031;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 5px solid #d63031;
+}
+
+/* --- LOADING --- */
+.loading-text,
+.empty-text {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--text-light);
+  font-style: italic;
+}

@@ -1,0 +1,116 @@
+/* :root là nơi khai báo biến màu sắc dùng chung */
+/* Sau này muốn đổi theme chỉ cần sửa ở đây là tự động đổi hết */
+:root {
+  --primary-color: #3498db;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --bg-body: #f0f2f5;
+}
+
+/* 1. Reset CSS: Xóa bỏ khoảng cách mặc định của trình duyệt */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Giúp padding không làm vỡ kích thước div */
+}
+
+/* 2. Thiết lập font chữ và màu nền toàn trang */
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* Làm mượt font chữ trên Mac/iOS */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Căn giữa app trên màn hình lớn */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* align-items start để khi list dài không bị đẩy lên giữa */
+}
+
+/* 3. Đảm bảo thẻ root (nơi chứa React App) hoạt động đúng */
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 4. Tùy chỉnh thanh cuộn (Scrollbar) cho đẹp hơn */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}
+
+/* 5. Style mặc định cho các thẻ phổ biến */
+button {
+  font-family: inherit;
+  /* Nút bấm thừa kế font của body */
+}
+
+/* Import font Google 'Poppins' nhìn cho hiện đại */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary: #6c5ce7;
+  /* Màu tím pastel chủ đạo */
+  --primary-hover: #5649c0;
+  --bg-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  /* Nền gradient loang màu */
+  --text-main: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  /* Giữ nền cố định khi cuộn */
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  /* Cách lề trên một chút */
+  padding-bottom: 60px;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
